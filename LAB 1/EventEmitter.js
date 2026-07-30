@@ -18,11 +18,24 @@ import{EventEmitter} from 'node:events';
     console.log(`${name} logged out`);
  };
 
- const task=new EventEmitter();
- task.on("greet",login);
- task.emit("greet","john");
+ const exit=()=>{
+    console.log("system shut down");
+ }
 
- start();
- login("john");
- working("john");
- checkout("john");
+ const task=new EventEmitter();
+ task.once("greet",start);
+ task.on("greet",login);
+ task.on("greet",working);
+ task.on("greet",checkout);
+ task.once("exit",()=>{
+    console.log("system shut down");
+ });
+ 
+ task.emit("greet","john");
+ task.emit("greet","jane");
+ task.off("greet",working);
+ task.emit("greet","james");
+ task.emit("exit","manager");
+
+
+ 
