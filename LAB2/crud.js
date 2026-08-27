@@ -48,7 +48,12 @@ const removeFromCart = async (pid) => {
         console.log(`Product with id ${pid} removed from cart`);
     }
 };
-
+const updateQuantity = async (pid, qty) => {
+    const data = await getCart();
+    const isFound = data.find((item) => item.id === pid);
+    if (isFound) {
+        isFound.qty += value;
+        aw
 const main = async () => {
   let choice;
   const cin = readline.createInterface({ input: stdin, output: stdout });
