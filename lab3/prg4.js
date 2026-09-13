@@ -1,21 +1,30 @@
-import http from "http"
+import http from "http";
 
 const server = http.createServer((req, res) => {
-    res.writeHead(200, {'content-type':'application/json'});
+  res.writeHead(200, { "content-type": "application/json" });
+  console.log("Client ULR:", req.url);
 
-    const product = [{
-        name:"Iphone",
-        price: 85000,
-        qty:15,
-    };
-
-    const product = {
-        name:"HP Laptop",                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-        price: 85000,
-        qty:15, 
+  const product = [
+    {
+      name: "Iphone",
+      price: 85000,
+      qty: 2,
+      discount: 15,
     },
-
-    ];
-    res.end(JSON.stringify(product));
-  
+    {
+      name: "HP Laptop",
+      price: 95000,
+      qty: 1,
+      discount: 25,
+    },
+    {
+      name: "Samsung TV",
+      price: 45000,
+      qty: 1,
+      discount: 10,
+    },
+  ];
+  res.end(JSON.stringify(product));
 });
+
+server.listen(3000, () => console.log("prg4 is running at 3000..."));
