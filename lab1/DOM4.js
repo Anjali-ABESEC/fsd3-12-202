@@ -8,3 +8,7 @@ form.on("submit" , (username, password) => {
 });
 
 form.emit("submit", "Raju", "12345");
+// for the above code, the output will be:
+// Form submitted
+// Username: Raju
+// Password: 12345
