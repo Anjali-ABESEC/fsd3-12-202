@@ -26,4 +26,7 @@ script{
 1. GET - get all , get by id
  - GET: "/api/products" - get all products
  - GET: "/api/products/101" - get by id
-2. POST - 
+2. POST - " / api/products"
+ - data will be shared from ecoAPI body section
+3. PUT/PATCH - "/api/products/201"
+4. DELETE - "/api/products/101"

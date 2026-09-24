@@ -7,6 +7,18 @@ let users = [
 
 let nextId = 4; 
 
+  
+const getAllUsers = () => {
+    return users;
+}
+
+const getUsersById = (pid) =>{
+    const found = users.find((user)=>user.id === pid)
+    return found;
+
+}
+  
+
 export const getUsers = () => users;
 
 export const addUser = (user) => {
@@ -14,3 +26,4 @@ export const addUser = (user) => {
     users.push(user);
     return user;
 };
+
