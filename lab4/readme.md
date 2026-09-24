@@ -19,5 +19,11 @@ script{
 ## REST API
 -- majorly backend server return only data not html file
 --REST API uses (get , post , put , patch and delete) method to communicate with client
--- any browser can check only method
+-- any browser can check only get method
 -- for other method type we use third party API tester like  postman , echo api , 
+
+## request type
+1. GET - get all , get by id
+ - GET: "/api/products" - get all products
+ - GET: "/api/products/101" - get by id
+2. POST - 
