@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TechHub — iPhone, Laptop & TV</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #111827;
+}
+
+/* Header */
+header {
+  background: #111827;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+nav {
+  max-width: 1150px;
+  margin: auto;
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+nav a {
+  color: #d1d5db;
+  text-decoration: none;
+  margin-left: 24px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: white;
+}
+
+/* Hero */
+.hero {
+  max-width: 1150px;
+  margin: auto;
+  padding: 70px 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.badge {
+  color: #4338ca;
+  background: #e0e7ff;
+  padding: 8px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(45px, 6vw, 76px);
+  line-height: .95;
+  letter-spacing: -4px;
+  margin: 20px 0;
+}
+
+.hero p {
+  max-width: 540px;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 14px 21px;
+  background: #111827;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Device showcase */
+.showcase {
+  height: 390px;
+  background: #fff;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 25px 60px #1e293b18;
+}
+
+.devices {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transform: rotate(-5deg);
+}
+
+/* Phone */
+.phone {
+  width: 95px;
+  height: 190px;
+  border: 5px solid #020617;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    #f9a8d4,
+    #818cf8,
+    #38bdf8
+  );
+  position: relative;
+}
+
+.cam {
+  position: absolute;
+  top: 10px;
+  left: 9px;
+  width: 28px;
+  height: 28px;
+  background: #111827;
+  border-radius: 9px;
+}
+
+/* Laptop */
+.laptop {
+  width: 230px;
+  height: 135px;
+  border: 8px solid #64748b;
+  border-bottom-width: 14px;
+  border-radius: 9px;
+  background: linear-gradient(
+    135deg,
+    #dbeafe,
+    #c7d2fe
+  );
+  position: relative;
+}
+
+.laptop:after {
+  content: "";
+  position: absolute;
+  bottom: -27px;
+  left: -25px;
+  width: 264px;
+  height: 14px;
+  background: #475569;
+  border-radius: 0 0 14px 14px;
+}
+
+/* TV */
+.tv {
+  width: 235px;
+  height: 135px;
+  border: 8px solid #111827;
+  border-radius: 8px;
+  background: linear-gradient(
+    135deg,
+    #0ea5e9,
+    #7c3aed,
+    #f43f5e
+  );
+  position: relative;
+}
+
+.tv:after {
+  content: "";
+  position: absolute;
+  bottom: -26px;
+  left: 97px;
+  width: 25px;
+  height: 18px;
+  background: #111827;
+}
+
+/* Products */
+section {
+  max-width: 1150px;
+  margin: auto;
+  padding: 60px 22px;
+}
+
+.title {
+  text-align: center;
+  font-size: 38px;
+  margin: 0 0 8px;
+}
+
+.sub {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 35px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 22px;
+  padding: 20px;
+}
+
+.product {
+  height: 260px;
+  background: #f8fafc;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.product .phone {
+  width: 90px;
+  height: 180px;
+}
+
+.product .laptop {
+  width: 215px;
+  height: 125px;
+}
+
+.product .tv {
+  width: 215px;
+  height: 120px;
+}
+
+h3 {
+  font-size: 21px;
+  margin: 0 0 7px;
+}
+
+.card p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.price {
+  font-size: 21px;
+  font-weight: 800;
+  margin-top: 15px;
+}
+
+button {
+  border: 0;
+  background: #111827;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 9px;
+  margin-top: 14px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #374151;
+}
+
+/* Features */
+.features {
+  max-width: none;
+  background: #111827;
+  color: #fff;
+  text-align: center;
+}
+
+.feature-grid {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.feature p {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+/* Footer */
+footer {
+  max-width: 1150px;
+  margin: auto;
+  padding: 30px 22px;
+  color: #64748b;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+
+  nav a {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 45px;
+  }
+
+  .showcase {
+    height: 320px;
+  }
+
+  .devices {
+    transform: scale(.65) rotate(-5deg);
+  }
+
+  .grid,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    display: block;
+  }
+
+  footer span {
+    display: block;
+    margin-top: 8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <div class="logo">TECHHUB</div>
+
+    <div>
+      <a href="#products">Products</a>
+      <a href="#features">Why Us</a>
+      <a href="#contact">Contact</a>
+      <a href="#products">
+        Cart (<span id="count">0</span>)
+      </a>
+    </div>
+  </nav>
+</header>
+
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+  <div>
+    <span class="badge">NEXT-GEN TECH</span>
+
+    <h1>
+      One place.<br>
+      All your tech.
+    </h1>
+
+    <p>
+      Discover premium smartphones, powerful laptops,
+      and immersive TVs designed to upgrade the way
+      you work, play, create, and connect.
+    </p>
+
+    <a class="btn" href="#products">
+      Explore products →
+    </a>
+  </div>
+
+
+  <!-- Device Illustration -->
+  <div class="showcase">
+
+    <div class="devices">
+
+      <!-- iPhone -->
+      <div class="phone">
+        <div class="cam"></div>
+      </div>
+
+      <!-- Laptop -->
+      <div class="laptop"></div>
+
+      <!-- TV -->
+      <div class="tv"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+<section id="products">
+
+  <h2 class="title">
+    Featured Products
+  </h2>
+
+  <p class="sub">
+    Find your next favorite device.
+  </p>
+
+
+  <div class="grid">
+
+    <!-- iPhone -->
+    <article class="card">
+
+      <div class="product">
+        <div class="phone">
+          <div class="cam"></div>
+        </div>
+      </div>
+
+      <h3>iPhone Pro</h3>
+
+      <p>
+        Premium performance, advanced cameras,
+        and a stunning display.
+      </p>
+
+      <div class="price">
+        $999
+      </div>
+
+      <button onclick="add()">
+        Add to cart
+      </button>
+
+    </article>
+
+
+    <!-- Laptop -->
+    <article class="card">
+
+      <div class="product">
+        <div class="laptop"></div>
+      </div>
+
+      <h3>Pro Laptop</h3>
+
+      <p>
+        Fast, lightweight, and built for work,
+        creativity, and productivity.
+      </p>
+
+      <div class="price">
+        $1,299
+      </div>
+
+      <button onclick="add()">
+        Add to cart
+      </button>
+
+    </article>
+
+
+    <!-- TV -->
+    <article class="card">
+
+      <div class="product">
+        <div class="tv"></div>
+      </div>
+
+      <h3>4K Smart TV</h3>
+
+      <p>
+        Bring movies, games, sports, and streaming
+        to life in brilliant 4K.
+      </p>
+
+      <div class="price">
+        $799
+      </div>
+
+      <button onclick="add()">
+        Add to cart
+      </button>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- FEATURES -->
+<section class="features" id="features">
+
+  <div class="feature-grid">
+
+    <div class="feature">
+      <h3>🚚 Fast Delivery</h3>
+      <p>
+        Quick and reliable delivery.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>🔒 Secure Shopping</h3>
+      <p>
+        Shop with confidence.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>↩️ Easy Returns</h3>
+      <p>
+        Simple returns on eligible products.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer id="contact">
+
+  <strong>TECHHUB</strong>
+
+  <span>
+    © 2026 TechHub · iPhone · Laptop · TV
+  </span>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+<script>
+
+let cart = 0;
+
+function add() {
+
+  cart++;
+
+  document.getElementById("count").textContent = cart;
+
+}
+
+</script>
+
+</body>
+</html>
