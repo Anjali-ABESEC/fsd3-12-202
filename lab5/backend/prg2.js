@@ -6,7 +6,7 @@ const app = express();
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 app.get("/", (req, res) => {
-  res.sendFile(path.join(dirname, `pages`, "products.html"));
+  res.sendFile(path.join(dirname, `pages`, "product.html"));
 });
 app.get("/contact", (req, res) => {
   res.sendFile(path.join(dirname, `pages`, "contact.html"));
