@@ -1,11 +1,11 @@
 // api writing 
 
 import http from 'http';
-import { addUser, getUsers } from "./users.js";
+import { addUser, getUsers , updateUsers , deleteUser, getUserById , getAllUsers } from "./users.js";
 
 const server = http.createServer((req, res) => {
     if (req.url === "/api/users" && req.method === "GET") {
-        res.end(JSON.stringify( getUsers()));
+        res.end(JSON.stringify(getAllUsers()));
     }
     else if (req.url === "/api/users" && req.method === "POST") {
        let body = "";

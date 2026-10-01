@@ -30,3 +30,5 @@ script{
  - data will be shared from ecoAPI body section
 3. PUT/PATCH - "/api/products/201"
 4. DELETE - "/api/products/101"
+
+// exported functions can be 
